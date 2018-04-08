@@ -122,7 +122,7 @@
     left: 0;
     margin: 10px 14px;
     border-radius: 10px;
-    background-color: rgba(55,55,55,.8);
+    background-color: rgba(55,55,55,.6);
     display: none;
   }
   .cover p{
