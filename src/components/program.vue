@@ -39,15 +39,17 @@
         fiveArr:[]
       }),
       beforeCreate(){
-        this.$http.get('/article/getArticle').then((data) => {  
-            this.textArr = data.body;
-        })  
+        
       },
       created(){
-        this.fiveArr = this.getArrItems(this.textArr,5)
+        this.$http.get('/article/getArticle').then((data) => {  
+            this.textArr = data.body;
+            this.fiveArr = this.getArrItems(this.textArr,5)
+        })  
+        
       },
       mounted(){
-        console.log(this.fiveArr)
+        
           /*this.fiveArr = this.getArrItems(this.textArr,5)*/
       },
       methods: {
