@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Xie Hao"><meta name="description" conauthortent="个人博客"><link rel="alternative" href="/atom.xml" title="xiehao.online" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>hexo创建新文章 - xiehao.online</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">xiehao.online</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Catalogue /（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-07-28T07:55:47.000Z">July 28, 2017</time><h1 class="post__title"><a href="/2017/07/28/hexo创建新文章/">hexo创建新文章</a></h1><div class="post__main echo"><p>通过命令创建新文章：</p>
+<p>D:\workspace\javascript\nodejs-hexo&gt;hexo new 新的开始</p>
+<p>[info] File created at D:\workspace\javascript\nodejs-hexo\source\_posts\新的开始.md</p>
+<p>然后，我们编辑文件：&quot;新的开始.md&quot;，以markdown语法写文章，然后保存。</p>
+<p>在命令行，启动服务器。</p>
+<p>D:\workspace\javascript\nodejs-hexo&gt;hexo server</p>
+<p>[info] Hexo is running at <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>. Press Ctrl+C to stop.</p>
+<p>通过浏览器打开， <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> ，就出现了我们新写的文章。</p>
+<p>写完了文章，我们就可以发布了。要说明的一点是hexo的静态博客框架，那什么是静态博客呢？静态博客，是只包含html, javascript, css文件的网站，没有动态的脚本。虽然我们是用Node进行的开发，但博客的发布后就与Node无关了。在发布之前，我们要通过一条命令，把所有的文章都做静态化处理，就是生成对应的html, javascript, css，使得所有的文章都是由静态文件组成的。</p>
+<p>静态化命令：</p>
+<p>D:\workspace\javascript\nodejs-hexo&gt;hexo generate</p>
+<p>在本地目录下，会生成一个public的目录，里面包括了所有静态化的文件。</p>
+<p>发布到github：</p>
+<p>编辑全局配置文件：_config.yml，找到deploy的部分，设置github的项目地址。</p>
+<p>deploy:</p>
+<p>  type: git</p>
+<p>  repo: <a href="https://github.com/goonxh/nodejs-hexo.git" target="_blank" rel="external">https://github.com/goonxh/nodejs-hexo.git</a></p>
+<p>然后，通过命令进行部署。</p>
+<p>D:\workspace\javascript\nodejs-hexo&gt;hexo deploy</p>
+<p>由于每次执行deploy的时候，gh-pages分支所有的文件都会被覆盖，所以我们最好在source目录下创建这个CNAME文件，这样每次部署就不用动手创建了。</p>
+<p>替换皮肤</p>
+<p>找到一个皮肤或者自己开发一个皮肤</p>
+<p>打开hexo的皮肤列表页面，你可以找到很多的皮肤，网页地址： <a href="https://github.com/tommy351/hexo/wiki/Themes。" target="_blank" rel="external">https://github.com/tommy351/hexo/wiki/Themes。</a></p>
+<p> 放到themes目录下</p>
+<p>比如，我觉得pacman(<a href="https://github.com/A-limon/pacman" target="_blank" rel="external">https://github.com/A-limon/pacman</a>) 这个皮肤还不错，我就可以下载皮肤到themes目录下面。</p>
+<p>通过git命令下载皮肤</p>
+<p>git clone <a href="https://github.com/A-limon/pacman.git" target="_blank" rel="external">https://github.com/A-limon/pacman.git</a> themes/pacman</p>
+<p> 在_config.yml指定皮肤</p>
+<p>编辑文件_config.yml，找到theme一行，改成 theme: pacman</p>
+<p>本地启动hexo服务器，打开浏览器 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/博客/">博客</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/hexo/">hexo</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC8yOTc2MS82MzI3"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Xie Hao</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

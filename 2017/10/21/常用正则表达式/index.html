@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Xie Hao"><meta name="description" conauthortent="个人博客"><link rel="alternative" href="/atom.xml" title="xiehao.online" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>常用正则表达式 - xiehao.online</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">xiehao.online</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Catalogue /（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-10-21T03:43:39.000Z">October 21, 2017</time><h1 class="post__title"><a href="/2017/10/21/常用正则表达式/">常用正则表达式</a></h1><div class="post__main echo"><p>From: <a href="https://deerchao.net/tutorials/regex/common.htm" target="_blank" rel="external">deerchao</a></p>
+<p>说明：正则表达式通常用于两种任务：1.验证，2.搜索/替换。用于验证时，通常需要在前后分别加上^和$，以匹配整个待验证字符串；搜索/替换时是否加上此限定则根据搜索的要求而定，此外，也有可能要在前后加上\b而不是^和$。此表所列的常用正则表达式，除个别外均未在前后加上任何限定，请根据需要，自行处理。</p>
+<p>网址（URL）</p>
+<p>RE：[a-zA-z]+://[^\s]*</p>
+<p>IP地址</p>
+<p>RE：((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</p>
+<p>电子邮件</p>
+<p>RE: \w+([-+.]\w+)*@\w+([-.]\w+)*.\w+([-.]\w+)*</p>
+<p>Html标记（包括内容或自闭合）</p>
+<p>RE：&lt;(.*)(.*)&gt;.*&lt;\/\1&gt;|&lt;(.*) \/&gt;</p>
+<p>密码(由数字/大写字母/小写字母/标点符号组成，四种都必有，8位以上)</p>
+<p>RE：(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?=.*[A-Z])(?=.*[a-z])(?!.*\n).*$</p>
+<p>日期(年-月-日)</p>
+<p>RE：(\d{4}|\d{2})-((1[0-2])|(0?[1-9]))-(([12][0-9])|(3[01])|(0?[1-9]))</p>
+<p>日期(月/日/年)</p>
+<p>RE：((1[0-2])|(0?[1-9]))/(([12][0-9])|(3[01])|(0?[1-9]))/(\d{4}|\d{2})</p>
+<p>时间(小时:分钟, 24小时制)</p>
+<p>RE：((1|0?)[0-9]|2[0-3]):([0-5][0-9])</p>
+<p>汉字(字符)</p>
+<p>RE：[\u4e00-\u9fa5]</p>
+<p>中文及全角标点符号(字符)</p>
+<p>RE：[\u3000-\u301e\ufe10-\ufe19\ufe30-\ufe44\ufe50-\ufe6b\uff01-\uffee]</p>
+<p>中国大陆固定电话号码</p>
+<p>RE：(\d{4}-|\d{3}-)?(\d{8}|\d{7})</p>
+<p>中国大陆手机号码</p>
+<p>RE：1\d{10}</p>
+<p>中国大陆邮政编码</p>
+<p>RE：[1-9]\d{5}</p>
+<p>中国大陆身份证号(15位或18位)</p>
+<p>RE：\d{15}(\d\d[0-9xX])?</p>
+<p>非负整数(正整数或零)</p>
+<p>RE：\d+</p>
+<p>正整数</p>
+<p>RE：[0-9]*[1-9][0-9]*</p>
+<p>负整数</p>
+<p>RE：-[0-9]*[1-9][0-9]*</p>
+<p>整数</p>
+<p>RE：-?\d+</p>
+<p>小数</p>
+<p>RE：(-?\d+)(.\d+)?</p>
+<p>不包含abc的单词</p>
+<p>RE：\b((?!abc)\w)+\b</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/正则表达式/">正则表达式</a></li><li class="post__tag__item"><a class="post__tag__link" href="/tags/js/">js</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC8yOTc2MS82MzI3"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Xie Hao</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>

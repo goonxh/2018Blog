@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Xie Hao"><meta name="description" conauthortent="个人博客"><link rel="alternative" href="/atom.xml" title="xiehao.online" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>在window下搭建Vue.Js开发环境 - xiehao.online</title><link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css"><!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/fancybox/jquery.fancybox.min.js"></script></head><body style="opacity:0;"><header class="head"><h1 class="head-title u-fl"><a href="/">xiehao.online</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/archives">Catalogue /（目录）</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"> <time class="post__time" datetime="2017-08-25T08:30:19.000Z">August 25, 2017</time><h1 class="post__title"><a href="/2017/08/25/在window下搭建Vue-Js开发环境/">在window下搭建Vue.Js开发环境</a></h1><div class="post__main echo"><p>1.nodejs官网<a href="http://nodejs.cn/下载安装包并安装。" target="_blank" rel="external">http://nodejs.cn/下载安装包并安装。</a><br>2.cmd命令行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">node -v //显示node版本 v6.10.3</div><div class="line">npm -v  //显示npm包管理器版本 3.10.10</div></pre></td></tr></table></figure></p>
+<p>3.由于有些npm有些资源被屏蔽或者是国外资源的原因，经常会导致用npm安装依赖包的时候失败，所有我还需要npm的国内镜像—cnpm.</p>
+<h2 id="国内优秀npm镜像"><a href="#国内优秀npm镜像" class="headerlink" title="国内优秀npm镜像"></a>国内优秀npm镜像</h2><h3 id="淘宝npm镜像"><a href="#淘宝npm镜像" class="headerlink" title="淘宝npm镜像"></a>淘宝npm镜像</h3><p>搜索地址:<a href="http://npm.taobao.org/" target="_blank" rel="external">http://npm.taobao.org/</a><br>registry:<a href="http://registry.npm.taobao.org/" target="_blank" rel="external">http://registry.npm.taobao.org/</a> </p>
+<h3 id="cnpmjs镜像"><a href="#cnpmjs镜像" class="headerlink" title="cnpmjs镜像"></a>cnpmjs镜像</h3><p>搜索地址:<a href="http://cnpmjs.org/" target="_blank" rel="external">http://cnpmjs.org/</a><br>registry:<a href="http://r.cnpmjs.org/" target="_blank" rel="external">http://r.cnpmjs.org/</a></p>
+<p>4.Cmd命令行中输入</p>
+<pre><code>npm install -g cnpm --registry=http://registry.npm.taobao.org
+</code></pre><p>5.安装vue-cli脚手架构建工具：</p>
+<pre><code>npm install -g vue-cli
+</code></pre><p>6.至此，我们需要的环境及工具已经准备好了。<br>  接下来，我们使用vue-cli来构建项目。</p>
+<p>7.首先,在自己新建的项目目录中，运行命令</p>
+<pre><code>vue init webpack myProjectName
+</code></pre><p>其中，webpack是构建工具、模块打包器，也就是整个项目是基于webpack的。其中，myProjectName是项目文件夹的名称，这个文件夹会自动生成在这个工作目录中。</p>
+<p>8.安装过程中，需要我们输入项目名称，描述，作者，版本（独立版）,使用ESLint规范等等。</p>
+<p>9.cd到我们的项目文件夹myProjectName中运行命令</p>
+<pre><code>cnpm install
+</code></pre><p>安装包,(注意：我们已经使用淘宝镜像cnpm)</p>
+<p>10.安装完之后，我们发现项目文件夹下多了一个node_modules目录，里面就是项目依赖包资源。</p>
+<p>11.安装完依赖包之后，就可以运行整个项目了。 运行项目在项目目录中，运行命令 </p>
+<pre><code>npm run dev 
+</code></pre><p>会用热加载的方式运行我们的应用，热加载可以让我们在修改完代码后不用手动刷新浏览器就能实时看到修改后的效果。</p>
+<p>12.如果启动过程中报错：</p>
+<pre><code>Error: listen BACCES 0.0.0.0:8080
+</code></pre><p>是由于你的8080端口被占用了，在你的项目文件夹下找到config → index.js 并打开。<br>将 port：8080 改为没有被占用的端口，然后重新运行即可。</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/vue-js/">vue.js</a></li></ul></footer></article><div class="comments" id="lv-container" data-id="city" data-uid="MTAyMC8yOTc2MS82MzI3"><script>(function(d, s) {var j, e = d.getElementsByTagName(s)[0];if (typeof LivereTower === 'function') { return; } j = d.createElement(s);j.src = 'https://cdn-city.livere.com/js/embed.dist.js';j.async = true;e.parentNode.insertBefore(j, e);})(document, 'script');</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016-2018 Xie Hao</div></footer><script src="/js/scroller.js"></script><script src="/js/main.js"></script></body></html>
