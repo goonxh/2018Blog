@@ -23,5 +23,5 @@ app.get('*', function(req, res) {
     res.send(html)
 })
 // 监听8088端口
-app.listen(80);
+app.listen(8088);
 console.log('success listen…………');
