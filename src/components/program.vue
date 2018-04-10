@@ -6,15 +6,15 @@
     </div>
     <div class="proContent">
     <div class="proWrapper">
-      <a href="http://www.showinfo.com.cn" target="_blank"><img src="../assets/showinfoWeb.png" alt="" width="300" class="pro">
+      <a href="http://www.showinfo.com.cn" target="_blank"><img src="../assets/showinfoWeb.png" alt="" width="280" class="pro">
       <div class="cover"><p>视尔<br>点击进入</p></div></a>
     </div>
     <div class="proWrapper">
-      <a href="http://blog.xiehao.online" target="_blank"><img src="../assets/blogWeb.png" alt="" width="300" class="pro">
+      <a href="http://blog.xiehao.online" target="_blank"><img src="../assets/blogWeb.png" alt="" width="280" class="pro">
       <div class="cover"><p>博客<br>点击进入</p></div></a>
     </div>
     <div class="proWrapper">
-      <a href="#nogo"><img src="../assets/xcx.jpg" alt="" width="300" class="pro">
+      <a href="#nogo"><img src="../assets/xcx.jpg" alt="" width="280" class="pro">
       <div class="cover"><p>小程序<br>扫码体验</p></div></a>
     </div>
     <div class="clear"></div>
@@ -94,6 +94,7 @@
 <style scoped>
   .wrapper{
     position: relative;
+    height: 550px;
   }
   #proIntro{
       width: 900px;
@@ -112,7 +113,7 @@
   }
   
   .proContent{
-    width: 1000px;
+    width: 906px;
     margin:0 auto;
   }
   .proWrapper{
@@ -120,12 +121,12 @@
     position: relative;
   }
   .cover{
-    width: 302px;
-    height: 150px;
+    width: 282px;
+    height: 140px;
     position: absolute;
     top: 0;
     left: 0;
-    margin: 10px 14px;
+    margin: 10px 10px;
     border-radius: 10px;
     background-color: rgba(55,55,55,.6);
     display: none;
@@ -141,7 +142,7 @@
     display: block;
   }
   .pro{
-    margin: 10px 14px;
+    margin: 10px 10px;
     border: 1px #eef solid;
     border-radius: 10px;
     box-shadow: 0 0 5px rgb(200,200,200,.6);
@@ -183,6 +184,9 @@
     transform:rotate(360deg);
   }
   @media (max-width: 500px) { 
+   .wrapper{
+    height: 880px;
+   }
    .proText{
     line-height: 24px;
   }
@@ -199,13 +203,13 @@
     font-size: 24px;
    }
    .proContent{
-    width: 350px;
+      width: 350px;
     } 
   .proWrapper{
     float: none;
   }
   .pro{
-    width: 302px;
+    width: 282px;
     margin: 10px auto;
     display: block;
   }
@@ -213,7 +217,7 @@
     top:810px;
   }
   .cover{
-    margin: 0px 24px;
+    margin: 0px 34px;
   }
   .textList{
     width: 320px;

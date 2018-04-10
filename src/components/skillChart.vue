@@ -18,13 +18,14 @@
         data () {
             return {
                 charts: '',
-                opinion:['vue.js','node.js','小程序','HTML5','CSS3'],
+                opinion:['vue.js','node.js','小程序','HTML5','CSS3','数据库'],
                 opinionData:[
-                  {value:40, name:'vue.js'},
+                  {value:30, name:'vue.js'},
                   {value:10, name:'node.js'},
-                  {value:20, name:'小程序'},
-                  {value:15, name:'HTML5'},
-                  {value:15, name:'CSS3'}
+                  {value:15, name:'小程序'},
+                  {value:20, name:'HTML5'},
+                  {value:20, name:'CSS3'},
+                  {value:5, name:'数据库'}
                 ]
             }
         },
@@ -90,7 +91,7 @@
     background-color: rgba(222,222,222,.5);
   }
   #main{
-    width: 600px;
+    width: 700px;
     height: 400px; 
     margin: 0 auto;
   }
