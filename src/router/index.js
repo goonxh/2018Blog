@@ -4,6 +4,7 @@ import selfIntro from '@/components/IamXiehao'
 import skillChart from '@/components/skillChart'
 import program from '@/components/program'
 import aboutMe from '@/components/aboutMe'
+import contactMe from '@/components/contactMe'
 
 Vue.use(Router)
 
@@ -17,7 +18,8 @@ export default new Router({
       	selfIntro:selfIntro,
       	skillChart:skillChart,
         program:program,
-        aboutMe:aboutMe
+        aboutMe:aboutMe,
+        contactMe:contactMe
       }
     }
   ]

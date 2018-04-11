@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" >
     <div class="titleWrapper">
-      <h3 class="title">关于我</h3>
+      <h3 class="title">联系我</h3>
     </div>
     <div class="selfContent">
       <div class="selfIntro">
@@ -33,7 +33,6 @@
       },
       mounted(){
         
-          /*this.fiveArr = this.getArrItems(this.textArr,5)*/
       },
       methods: {
         

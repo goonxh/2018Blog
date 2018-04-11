@@ -5,6 +5,7 @@
     <router-view name="skillChart" />
     <router-view name="program" />
     <router-view name="aboutMe" />
+    <!-- <router-view name="contactMe" /> -->
   </div>
 </template>
 
