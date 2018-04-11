@@ -237,10 +237,10 @@
   margin-top: -200px;
   z-index: 9999;
   }
-.intro p{
-  font-size: 16px;
-  line-height: 24px;
-}
+  .intro p{
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
 </style>
 

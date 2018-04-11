@@ -13,6 +13,18 @@
       </div>
       <p class="intro">当然，你也可以直接给我发送邮件：xh011234@163.com.</p>
       <p class="intro">或者，通过以下社交网络找到我：</p>
+      <a href="https://github.com/goonxh" target="_blank"><img src="../assets/github.png" alt="github" title="github" class="societyIcon githubIcon"></a>
+      <a href="https://weibo.com/goonxh" target="_blank"><img src="../assets/weibo.png" alt="weibo" title="weibo" class="societyIcon"></a>
+      <img src="../assets/wechat.png" alt="wechat" title="wechat" class="societyIcon" plain @click="openWechat">
+      <a href="https://www.zhihu.com/people/xh011234/" target="_blank"><img src="../assets/zhihu.png" alt="zhihu" title="zhihu" class="societyIcon"></a>
+    </div>
+    <div class="footer">
+      <img src="../assets/wechatQR.jpg" alt="wechatQR" title="wechatQR" class="wechatQR">
+      <br>
+      <img src="../assets/back-to-top2.png" alt="back-to-top" title="回到顶部" class="back-to-top">
+      <p>皖ICP备2018041123号</p>
+      <p>Inspired by <a href="http://www.dandyweng.com/" target="_blank">Dandy Weng</a>'s design.</p>
+      <p>Copyright © 2018 xiehao.xin. All Rights Reserved.</p>
     </div>
   </div>
 </template>
@@ -34,7 +46,13 @@
         
       },
       methods: {
-        
+        openWechat() {
+          this.$notify({
+            title: '微信号：ThankU_xh',
+            message: '当然，扫描下方二维码即可，斜眼笑',
+            duration: 5000
+          });
+        }
       }
   }
   
@@ -104,8 +122,47 @@
     margin-top: 12px;
     margin-right: 5px;
     z-index: 9;
+
   }
- 
+  .societyIcon{
+    width: 64px;
+    margin: 15px 20px;
+    cursor: pointer;
+  }
+  .wechatQR{
+    margin-top: 20px;
+    width: 200px;
+  }
+  .societyIcon:hover{
+    transform:scale(1.1);
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+  }
+  .footer p{
+    padding-top:5px;
+    color: rgb(105,96,107);
+    font-family: Helvetica,SimSun;
+    font-size: 16px;
+  }
+  .footer p a{
+    text-decoration: none;
+    color: #555;
+  }
+  .footer p:last-child{
+    padding-bottom:10px;
+  }
+  .back-to-top{
+    width: 64px;
+    margin: 30px 0;
+    cursor: pointer;
+  }
+  .back-to-top:hover{
+    transform:scale(1.05);
+    -webkit-transform:scale(1.05);
+    -moz-transform:scale(1.05);
+    -o-transform:scale(1.05);
+  }
   @media (max-width: 500px) { 
    .titleWrapper{
      width: 300px;
@@ -145,6 +202,17 @@
     width: 290px;
     text-align: left;
   }
+  .intro{
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .societyIcon{
+    width: 48px;
+    margin: 5px 10px;
+  }
+  .githubIcon{
+    margin-left: 0px;
+  } 
   }
 </style>
 
