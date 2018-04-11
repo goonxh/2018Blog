@@ -1,21 +1,18 @@
 <template>
-  <div class="wrapper" >
+  <div class="wrapper">
     <div class="titleWrapper">
       <h3 class="title">联系我</h3>
+      <p class="intro">探讨理想，分享技术，提供工作，均可通过下方给我留言，我会第一时间回复的。其他人不可见。:)</p>
     </div>
-    <div class="selfContent">
-      <div class="selfIntro">
-        <p>93年，天秤座</p>
-        <p>本科毕业</p>
-        <p>从事前端开发工作两年</p>
-        <p>三观明确</p>
-        <p>会装机、修电脑，但不接受永久售后</p>
-        <p>会打篮球，但篮子很差</p>
-        <p>不喜欢嘴炮</p>
-        <p>不讨论政治</p>
-        <p>不玩快手、抖音、内涵段子等</p>
-        <p>谦虚</p>
+    <div class="messageContent">
+      <el-input v-model="nameInput" placeholder="请输入您的称呼" class="nameInput"></el-input>
+      <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 8}" placeholder="请输入留言内容" v-model="Contextarea" class="Contextarea"></el-input>
+      <el-input v-model="emailInput" placeholder="请输入您的邮箱地址" class="emailInput"></el-input>
+      <div class="sendMes">
+        <img src="../assets/sendIcon.png" alt="发送留言" title="发送留言">
       </div>
+      <p class="intro">当然，你也可以直接给我发送邮件：xh011234@163.com.</p>
+      <p class="intro">或者，通过以下社交网络找到我：</p>
     </div>
   </div>
 </template>
@@ -23,7 +20,9 @@
 <script>
   export default {
       data:() => ({
-
+        nameInput:"",
+        Contextarea:"",
+        emailInput:""
       }),
       beforeCreate(){
         
@@ -61,21 +60,52 @@
   h3.title{
     padding:15px;
     color: rgb(105,96,107);
-    font-size: 24px;
     text-align: left;
     font-family: Helvetica,SimSun;
     font-size: 36px;
+    margin-top: 60px;
+    margin-bottom: 10px;
+  }
+  .intro{
+    padding:15px;
+    color: rgb(105,96,107);
+    font-size: 24px;
+    text-align: left;
+    font-family: Helvetica,SimSun;
     margin-bottom: 20px;
   }
-  .selfIntro{
-    position: absolute;
-    text-align: left;
-    top:15px;
-    left:500px;
-    font-size: 20px;
-    line-height: 36px;
-    font-family: "KaiTi";
+  .messageContent{
+    width: 900px;
+    margin: 0 auto;
   }
+  .el-input, .el-textarea{
+    margin-top: 20px;
+    width: 600px;
+    text-align: left;
+    box-shadow: 0 0 5px rgb(200,200,200,.6);
+  }
+  .sendMes{
+    width: 70px;
+    height: 70px;
+    margin:0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 100%;
+    border:1px solid rgba(200,200,200,.8);
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(200,200,200,.6);
+  }
+  .sendMes:hover{
+    background: rgba(200,200,200,.8);
+    /* border:1px solid rgba(0,0,0,.8); */
+  }
+  .sendMes img{
+    width: 50px;
+    margin-top: 12px;
+    margin-right: 5px;
+    z-index: 9;
+  }
+ 
   @media (max-width: 500px) { 
    .titleWrapper{
      width: 300px;
@@ -105,6 +135,15 @@
    .selfIntro{
     z-index: 9;
     left:50px;
+  }
+  .messageContent{
+    width: 320px;
+    margin: 0 auto;
+  }
+  .el-input, .el-textarea{
+    margin-top: 20px;
+    width: 290px;
+    text-align: left;
   }
   }
 </style>
