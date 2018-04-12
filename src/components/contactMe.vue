@@ -8,7 +8,7 @@
       <el-input v-model="nameInput" placeholder="请输入您的称呼" class="nameInput"></el-input>
       <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 8}" placeholder="请输入留言内容" v-model="Contextarea" class="Contextarea"></el-input>
       <el-input v-model="emailInput" placeholder="请输入您的邮箱地址" class="emailInput"></el-input>
-      <div class="sendMes">
+      <div class="sendMes" @click="sendMes">
         <img src="../assets/sendIcon.png" alt="发送留言" title="发送留言">
       </div>
       <p class="intro">当然，你也可以直接给我发送邮件：xh011234@163.com.</p>
@@ -21,7 +21,7 @@
     <div class="footer">
       <img src="../assets/wechatQR.jpg" alt="wechatQR" title="wechatQR" class="wechatQR">
       <br>
-      <img src="../assets/back-to-top2.png" alt="back-to-top" title="回到顶部" class="back-to-top">
+      <img src="../assets/back-to-top2.png" alt="back-to-top" title="回到顶部" class="back-to-top" @click="backtotop">
       <p>皖ICP备2018041123号</p>
       <p>Inspired by <a href="http://www.dandyweng.com/" target="_blank">Dandy Weng</a>'s design.</p>
       <p>Copyright © 2018 xiehao.xin. All Rights Reserved.</p>
@@ -42,8 +42,7 @@
       created(){
        
       },
-      mounted(){
-        
+      mounted() { 
       },
       methods: {
         openWechat() {
@@ -52,7 +51,42 @@
             message: '当然，扫描下方二维码即可，斜眼笑',
             duration: 5000
           });
-        }
+        },
+
+        backtotop() {
+          this.backTo(document.documentElement||document.body, 0, 500);
+        },
+
+        backTo:function(element, to, duration){
+          var that = this;
+           if (duration <= 0) return;
+            var difference = to - element.scrollTop;
+            var perTick = difference / duration * 10;
+
+            setTimeout(function() {
+                element.scrollTop = element.scrollTop + perTick;
+                if (element.scrollTop === to) return;
+                that.backTo(element, to, duration - 10);
+            }, 10);
+        },
+
+        sendMes(){
+
+          let params = { 
+              name : this.nameInput,
+              content : this.Contextarea,
+              email : this.emailInput
+          };
+
+          this.$http.post('/api/message/sendMes',params).then((data) => {
+            if(data.body == "successed"){
+              this.$message({
+                message: '留言发送成功！',
+                type: 'success'
+              });
+            }
+          })
+        } 
       }
   }
   
