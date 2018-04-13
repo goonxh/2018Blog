@@ -6,6 +6,8 @@
     <router-view name="program" />
     <router-view name="aboutMe" />
     <router-view name="contactMe" />
+    <router-view name="admin" />
+    <router-view name="daily" />
   </div>
 </template>
 

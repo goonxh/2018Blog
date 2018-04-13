@@ -19,7 +19,7 @@
    </transition>
    <div class="intro">
     <transition name="el-fade-in">
-      <p v-show="show">此刻正在用QQ音乐听草东没有派对的《情歌》，从华晨宇翻唱的《山海》，找到了草东没有派对乐队的专辑《丑奴儿》，很不错的一张专辑，至少能让我不被楼上的嬉笑喧闹所打扰。<br><br>对，我讨厌吵闹，更讨厌人为的吵闹，在家都安安静静的不好吗，一定能提高不少生产力呢。希望晚上能好好睡个觉，希望多挣点钱早点买起别墅。</p>
+      <p v-show="show"><a href="/daily" title="点击查看更多日常" class="daily">日常</a>：“<!-- 此刻正在用QQ音乐听草东没有派对的《情歌》，从华晨宇翻唱的《山海》，找到了草东没有派对乐队的专辑《丑奴儿》，很不错的一张专辑，至少能让我不被楼上的嬉笑喧闹所打扰。<br><br>对，我讨厌吵闹，更讨厌人为的吵闹，在家都安安静静的不好吗，一定能提高不少生产力呢。希望晚上能好好睡个觉，希望多挣点钱早点买起别墅。 -->{{dailyText}}”</p>
      </transition>
    </div>
   </div> 
@@ -34,8 +34,15 @@
         isGoTop:false,
         showBtn:true,
         changeColor:'#fff',
-        scroll:''
+        scroll:'',
+        dailyText:"更新中..."
       }),
+      beforeCreate(){
+        this.$http.get('/api/daily/getDaily').then((data) => {
+            /*console.log(data.body)*/
+            this.dailyText = data.body;
+        })
+      },
       methods:{
         clickToFullS(){ //浏览器全屏
            var de = document.documentElement;
@@ -127,7 +134,16 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.daily{
+  color: rgb(105,96,1);
+  font-size: 24px;
+  text-align: left;
+  font-family: Helvetica,SimSun;
+  text-decoration: none;
+}
+.daily:hover{
+  color: rgb(105,96,155);
+}
 .wrapper{
   width: 100%;
   height: 100%;
@@ -188,7 +204,7 @@
 .headerBackground{
   width: 100%;
   height: 100%;
-  background-image: url(https://xiehao.online/api/bing1920.php);
+  background-image: url(../assets/bingPic.jpg);
   background-position-x: 50%; 
 }
 #imxiehao{
@@ -220,6 +236,7 @@
   font-size: 24px;
   text-align: left;
   font-family: Helvetica,SimSun;
+  line-height: 32px;
 }
 
 @media (max-width: 500px) { 

@@ -5,7 +5,8 @@ import skillChart from '@/components/skillChart'
 import program from '@/components/program'
 import aboutMe from '@/components/aboutMe'
 import contactMe from '@/components/contactMe'
-
+import admin from '@/components/admin'
+import daily from '@/components/daily'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +22,20 @@ export default new Router({
         aboutMe:aboutMe,
         contactMe:contactMe
       }
-    }
+    },
+    {
+      path: '/adminForMyself',
+      name: 'admin',
+      components: {
+        admin:admin
+      }
+    },
+    {
+      path: '/daily',
+      name: 'daily',
+      components: {
+        daily:daily
+      }
+    },
   ]
 })

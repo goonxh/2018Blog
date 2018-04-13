@@ -84,6 +84,9 @@
                 message: '留言发送成功！',
                 type: 'success'
               });
+              this.nameInput = "";
+              this.Contextarea = "";
+              this.emailInput = "";
             }
           })
         } 

@@ -7,16 +7,21 @@ mongoose.connect('mongodb://localhost/2018blog');
 const db = mongoose.connection;
 db.once('error',() => console.log('Mongo connection error'));
 db.once('open',() => console.log('Mongo connection successed'));
-/************** 定义模式loginSchema **************/
+/************** 定义模式 Schema**************/
 const messageSchema = mongoose.Schema({
     name : String,
     content : String,
-    email : String
+    email : String,
+    time : String
 });
-
+const dailySchema = mongoose.Schema({
+    content : String,
+    time : String
+});
 /************** 定义模型Model **************/
 const Models = {
-    message : mongoose.model('message',messageSchema)
+    message : mongoose.model('message',messageSchema),
+    daily : mongoose.model('daily',dailySchema)
 }
 
 module.exports = Models;

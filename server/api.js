@@ -10,9 +10,10 @@ router.post('/api/message/sendMes',(req,res) => {
     let newMessage = new models.message({
         name : req.body.name,
         content : req.body.content,
-        email : req.body.email
+        email : req.body.email,
+        time : new Date().toLocaleString()
     });
-    // 保存数据newAccount数据进mongoDB
+    // 保存数据newMessage数据进mongoDB
     newMessage.save((err,data) => {
         if (err) {
             res.send(err);
@@ -21,17 +22,59 @@ router.post('/api/message/sendMes',(req,res) => {
         }
     });
 });
-// 获取已有账号接口
-/*router.get('/api/login/getAccount',(req,res) => {
+
+// 获取留言接口
+router.get('/api/message/getMes',(req,res) => {
     // 通过模型去查找数据库
-    models.Login.find((err,data) => {
+    models.message.find((err,data) => {
         if (err) {
-            res.send(err);
+            res.send("0");
         } else {
             res.send(data);
         }
     });
 });
-*/
+
+//发送日常接口
+router.post('/api/daily/sendDaily',(req,res) => {
+    // 这里的req.body能够使用就在index.js中引入了const bodyParser = require('body-parser')
+    let newDaily = new models.daily({
+        content : req.body.content,
+        time : new Date().toLocaleString()
+    });
+    // 保存数据newMessage数据进mongoDB
+    newDaily.save((err,data) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.send('successed');
+        }
+    });
+});
+
+//获取最新日常接口
+router.get('/api/daily/getDaily',(req,res) => {
+    // 通过模型去查找数据库
+    models.daily.find((err,data) => {
+        if (err) {
+            res.send("0");
+        } else {
+            /*console.log(data[data.length-1].content)*/
+            res.send(data[data.length-1].content);
+        }
+    });
+});
+//获取所有日常接口
+router.get('/api/daily/getADaily',(req,res) => {
+    // 通过模型去查找数据库
+    models.daily.find((err,data) => {
+        if (err) {
+            res.send("0");
+        } else {
+            res.send(data);
+        }
+    });
+});
+
 
 module.exports = router;
