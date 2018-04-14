@@ -23,7 +23,7 @@
         
       },
       created(){
-        this.$http.get('/api/daily/getADaily').then((data) => {
+        this.$http.get('/api/daily/getAllDaily').then((data) => {
             console.log(data.body)
             this.dailyList = data.body;
             this.dailyNum = this.dailyList.length;

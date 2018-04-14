@@ -65,7 +65,7 @@ router.get('/api/daily/getDaily',(req,res) => {
     });
 });
 //获取所有日常接口
-router.get('/api/daily/getADaily',(req,res) => {
+router.get('/api/daily/getAllDaily',(req,res) => {
     // 通过模型去查找数据库
     models.daily.find((err,data) => {
         if (err) {
