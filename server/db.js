@@ -6,9 +6,9 @@ var options = {
 	pass:"2012011234"
 }
 //远程连接
-//mongoose.connect('mongodb://47.106.141.98:27017/2018blog',options);
+mongoose.connect('mongodb://47.106.141.98:27017/2018blog',options);
 //本地连接
-mongoose.connect('mongodb://localhost/2018blog',options);
+//mongoose.connect('mongodb://localhost/2018blog',options);
 // 为这次连接绑定事件
 const db = mongoose.connection;
 db.once('error',() => console.log('Mongo connection error'));

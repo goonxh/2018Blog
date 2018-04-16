@@ -150,13 +150,37 @@
 }
 .goTop{
   transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -webkit-transform: translateY(0%);
   transition-duration: .5s;
+  -ms-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -o-transition-duration: .5s;
+  -webkit-transition-duration: .5s;
   transition-property: transform;
+  -ms-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  -webkit-transition-property: transform;
 }
 .scroll{
   transform: translateY(-25%);
+  -ms-transform: translateY(-25%);
+  -o-transform: translateY(-25%);
+  -moz-transform: translateY(-25%);
+  -webkit-transform: translateY(-25%);
   transition-duration: .5s;
+  -ms-transition-duration: .5s;
+  -moz-transition-duration: .5s;
+  -o-transition-duration: .5s;
+  -webkit-transition-duration: .5s;
   transition-property: transform;
+  -ms-transition-property: transform;
+  -moz-transition-property: transform;
+  -o-transition-property: transform;
+  -webkit-transition-property: transform;
 }
 .scroll:after{
   content:"";
@@ -169,12 +193,19 @@
   pointer-events:none;
   background:-webkit-linear-gradient(top,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
   background:linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background:-o-linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background:-ms-linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
+  background:-moz-linear-gradient(to bottom,rgba(255,255,255,0) 0,rgba(255,255,255,1) 100%);
 }
 .clickStart{
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   cursor: pointer;
 }
 .clickStart p{
@@ -212,6 +243,10 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
   /* color: #fff; */
   font-size: 46px;
 }
@@ -220,6 +255,10 @@
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
   margin-top: 55px;
   color: rgb(105,96,107);
   font-size: 26px;

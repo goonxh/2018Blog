@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" >
     <div class="dailyBox">
-      <p class="dailyNum">共{{mesNum}}条日常</p> 
+      <p class="dailyNum">共{{dailyNum}}条日常</p> 
       <ul class="dailyList">
       <li v-for="daily in dailyList">
         <p>日期：{{daily.time}}</p>

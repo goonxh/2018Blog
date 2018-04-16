@@ -54,7 +54,8 @@
         },
 
         backtotop() {
-          this.backTo(document.documentElement||document.body, 0, 500);
+          this.backTo(document.documentElement, 0, 500);
+          this.backTo(document.body, 0, 500);
         },
 
         backTo:function(element, to, duration){
