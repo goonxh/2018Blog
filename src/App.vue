@@ -8,6 +8,7 @@
     <router-view name="contactMe" />
     <router-view name="admin" />
     <router-view name="daily" />
+    <router-view name="resume" />
   </div>
 </template>
 

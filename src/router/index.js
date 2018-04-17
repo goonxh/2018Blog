@@ -7,6 +7,7 @@ import aboutMe from '@/components/aboutMe'
 import contactMe from '@/components/contactMe'
 import admin from '@/components/admin'
 import daily from '@/components/daily'
+import resume from '@/components/resume'
 Vue.use(Router)
 
 export default new Router({
@@ -35,6 +36,13 @@ export default new Router({
       name: 'daily',
       components: {
         daily:daily
+      }
+    },
+    {
+      path: '/resume',
+      name: 'resume',
+      components: {
+        resume:resume
       }
     },
   ]
