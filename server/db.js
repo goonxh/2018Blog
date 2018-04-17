@@ -24,10 +24,13 @@ const dailySchema = mongoose.Schema({
     content : String,
     time : String
 });
+const initSchema = mongoose.Schema({  //初始化数据表
+    visit : Number
+});
 /************** 定义模型Model **************/
 const Models = {
     message : mongoose.model('message',messageSchema),
-    daily : mongoose.model('daily',dailySchema)
+    daily : mongoose.model('daily',dailySchema),
+    init : mongoose.model('init',dailySchema)
 }
-
 module.exports = Models;
