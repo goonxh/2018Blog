@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png"> -->
     <router-view name="selfIntro" />
     <router-view name="skillChart" />
     <router-view name="program" />
@@ -19,10 +18,12 @@ export default {
         visitNum:""
       }),
   created(){
-        this.$http.get('/api/daily/getAllDaily').then((data) => {
-            console.log(data.body)
-            this.dailyList = data.body;
-            this.dailyNum = this.dailyList.length;
+        this.$http.get('/api/init/getVisitNum').then((data) => {
+            //console.log(data.body)
+            this.visitNum = data.body;
+            this.$http.post('/api/init/sendVisitNum',{visitNum:this.visitNum}).then((data) => {
+              //console.log(data.body)
+            })
         })
       }
 }

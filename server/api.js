@@ -78,9 +78,12 @@ router.get('/api/daily/getAllDaily',(req,res) => {
 
 //访问次数累加接口
 router.post('/api/init/sendVisitNum',(req,res) => {
-    let visit = req.body.visitNum
-    newVisitNum.save((err,data) => {
+    let visitNum = req.body.visitNum;
+    let newVisitNum = ++visitNum;
+    //console.log(newVisitNum)
+    models.init.update({_id:"5ad6b50db8c4a9bad2195d2c"},{$set:{visit:newVisitNum}},{upsert : true},function(err,data){
         if (err) {
+            console.log("error:"+ err)
             res.send(err);
         } else {
             res.send('successed');
@@ -93,11 +96,12 @@ router.get('/api/init/getVisitNum',(req,res) => {
     // 通过模型去查找数据库
     models.init.find((err,data) => {
         if (err) {
-            res.send("0");
+            res.send("error:"+ err);
         } else {
-            /*console.log(data[data.length-1].content)*/
-            res.send(data[data.length-1].content);
+            //console.log(data)
+            res.send(data[0].visit);
         }
     });
 });
+
 module.exports = router;

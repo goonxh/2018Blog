@@ -4,6 +4,7 @@
       <el-input type="textarea" :autosize="{ minRows: 4, maxRows: 6}" placeholder="请输入日常内容" v-model="dailyContent" class="dailyContent"></el-input>
        <el-button @click="sendDaily">更新日常</el-button>
     </div>
+    <p class="visit">网站一共被访问了{{visitNum}}次。</p>
     <div class="mesBox">
       <p class="mesNum">共{{mesNum}}条留言</p> 
       <ul class="mesList">
@@ -22,7 +23,8 @@
       data:() => ({
         dailyContent:"",
         message:[],
-        mesNum:""
+        mesNum:"",
+        visitNum:"0"
       }),
       beforeCreate(){
         
@@ -32,6 +34,10 @@
             console.log(data.body)
             this.message = data.body;
             this.mesNum = this.message.length;
+        })
+         this.$http.get('/api/init/getVisitNum').then((data) => {
+            //console.log(data.body)
+            this.visitNum = data.body;
         })
       },
       mounted(){
@@ -64,6 +70,11 @@
   .wrapper{
     width: 1000px;
     margin:0 auto;
+  }
+  .visit{
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
   .dailySet{
     /* margin-top: 20px; */
