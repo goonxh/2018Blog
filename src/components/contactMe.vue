@@ -22,9 +22,9 @@
       <img src="../assets/wechatQR.jpg" alt="wechatQR" title="wechatQR" class="wechatQR">
       <br>
       <img src="../assets/back-to-top2.png" alt="back-to-top" title="回到顶部" class="back-to-top" @click="backtotop">
-      <p>皖ICP备2018041123号</p>
+      <a href="http://www.miitbeian.gov.cn/" target="_blank"><p>皖ICP备18007813号</p></a>
       <p>Inspired by <a href="http://www.dandyweng.com/" target="_blank">Dandy Weng</a>'s design.</p>
-      <p>Copyright © 2018 xiehao.xin. All Rights Reserved.</p>
+      <p class="copyright">Copyright © 2018 xiehao.xin. All Rights Reserved.</p>
     </div>
   </div>
 </template>
@@ -183,11 +183,17 @@
     font-family: Helvetica,SimSun;
     font-size: 16px;
   }
-  .footer p a{
+  .footer a p{
+    padding-top:5px;
+    color: rgb(105,96,107);
+    font-family: Helvetica,SimSun;
+    font-size: 16px;
+  }
+  .footer a{
     text-decoration: none;
     color: #555;
   }
-  .footer p:last-child{
+  .copyright{
     padding-bottom:10px;
   }
   .back-to-top{
