@@ -25,7 +25,10 @@ export default {
               //console.log(data.body)
             })
         })
-      }
+      },
+  mounted(){
+     document.body.removeChild(document.getElementById("system-loading"));
+  }
 }
 </script>
 
