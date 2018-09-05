@@ -1,6 +1,6 @@
 # 2018blog
 
-> a website of myself
+> A website of myself
 
 ## Build Setup
 
