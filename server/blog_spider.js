@@ -35,6 +35,6 @@ router.get('/article/getArticle',(req,response) => {
 			})
 			response.send(articleData);
             })
-		}) 
+		})
 });
 module.exports = router;
