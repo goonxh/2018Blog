@@ -7,7 +7,7 @@
    <div class="title">
        <p id="imxiehao" v-bind:style="{color:changeColor}">你好，我是谢浩</p>
        <transition name="el-fade-in-linear">
-        <p id="welcome" v-show="show">欢迎来的我的网站</p>
+        <p id="welcome" v-show="show">欢迎来到我的网站</p>
        </transition>
     </div>
     <transition name="el-fade-in">
@@ -22,7 +22,7 @@
       <p v-show="show"><a href="/daily" title="点击查看更多日常" class="daily">日常</a>：“<!-- 此刻正在用QQ音乐听草东没有派对的《情歌》，从华晨宇翻唱的《山海》，找到了草东没有派对乐队的专辑《丑奴儿》，很不错的一张专辑，至少能让我不被楼上的嬉笑喧闹所打扰。<br><br>对，我讨厌吵闹，更讨厌人为的吵闹，在家都安安静静的不好吗，一定能提高不少生产力呢。希望晚上能好好睡个觉，希望多挣点钱早点买起别墅。 -->{{dailyText}}”</p>
      </transition>
    </div>
-  </div> 
+  </div>
 
 </template>
 
@@ -71,7 +71,7 @@
           }else if(this.scroll > "10"){
             this.show = true;
             this.isScroll = true;
-            this.showBtn = false; 
+            this.showBtn = false;
             this.changeColor = "rgb(105,96,107)";
           }
         },
@@ -79,14 +79,14 @@
           /*console.log(e)*/
           if(this.scroll == 0 && this.isScroll == false){
             e = e || window.event;
-            var deltaY = e.deltaY/100 || e.detail/3 
+            var deltaY = e.deltaY/100 || e.detail/3
             console.log(deltaY)
             if (e.stopPropagation) {
               e.stopPropagation();
               if (deltaY > 0) {
                 this.show = true;
                 this.isScroll = true;
-                this.showBtn = false; 
+                this.showBtn = false;
                 this.changeColor = "rgb(105,96,107)";
               }
             }else {
@@ -94,7 +94,7 @@
               if (deltaY > 0) {
                 this.show = true;
                 this.isScroll = true;
-                this.showBtn = false; 
+                this.showBtn = false;
                 this.changeColor = "rgb(105,96,107)";
               }
             }
@@ -103,7 +103,7 @@
               if (deltaY > 0) {
                 this.show = true;
                 this.isScroll = true;
-                this.showBtn = false; 
+                this.showBtn = false;
                 this.changeColor = "rgb(105,96,107)";
               }
             }else{
@@ -111,10 +111,10 @@
               if (deltaY > 0) {
                 this.show = true;
                 this.isScroll = true;
-                this.showBtn = false; 
+                this.showBtn = false;
                 this.changeColor = "rgb(105,96,107)";
               }
-            } 
+            }
           }
           /*console.log(e.detail);*/
           /*console.log(e.deltaY);*/
@@ -123,13 +123,13 @@
       mounted() {
         window.addEventListener('scroll', this.scrollFn);
 
-        if (document.addEventListener) {  
-          document.addEventListener('DOMMouseScroll', this.mouseWheelFn, false);  
-        }//W3C    
-        window.onmousewheel = document.onmousewheel = this.mouseWheelFn; //IE/Opera/Chrome/Safari    
+        if (document.addEventListener) {
+          document.addEventListener('DOMMouseScroll', this.mouseWheelFn, false);
+        }//W3C
+        window.onmousewheel = document.onmousewheel = this.mouseWheelFn; //IE/Opera/Chrome/Safari
       }
     }
-  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -236,7 +236,7 @@
   width: 100%;
   height: 100%;
   background-image: url(../assets/bingPic.jpg);
-  background-position-x: 50%; 
+  background-position-x: 50%;
 }
 #imxiehao{
   position: absolute;
@@ -278,7 +278,7 @@
   line-height: 32px;
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 500px) {
   #imxiehao{
     width: 208px;
     font-size: 26px;
