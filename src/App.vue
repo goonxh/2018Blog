@@ -8,6 +8,7 @@
     <router-view name="admin" />
     <router-view name="daily" />
     <router-view name="resume" />
+    <router-view name="ooxxpic" />
   </div>
 </template>
 

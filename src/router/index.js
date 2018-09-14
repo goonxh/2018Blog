@@ -38,14 +38,21 @@ export default new Router({
       name: 'daily',
       components: {
         daily:resolve => require(['@/components/daily'],resolve)
-      } 
+      }
     },
     {
       path: '/resume',
       name: 'resume',
       components: {
         resume:resolve => require(['@/components/resume'],resolve)
-      }  
+      }
     },
+    {
+      path: '/ooxxpic',
+      name: 'ooxxpic',
+      components: {
+        ooxxpic: resolve =>require(['@/components/ooxxpic'],resolve)
+      }
+    }
   ]
 })
