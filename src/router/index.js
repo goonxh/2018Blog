@@ -53,6 +53,13 @@ export default new Router({
       components: {
         ooxxpic: resolve =>require(['@/components/ooxxpic'],resolve)
       }
-    }
+    },
+    {
+      path: '/string2qrcode',
+      name: 'string2qrcode',
+      components: {
+        string2qrcode: resolve =>require(['@/components/string2qrcode'],resolve)
+      }
+    },
   ]
 })

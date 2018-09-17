@@ -9,6 +9,7 @@
     <router-view name="daily" />
     <router-view name="resume" />
     <router-view name="ooxxpic" />
+    <router-view name="string2qrcode" />
   </div>
 </template>
 
