@@ -48,8 +48,8 @@
     },
     methods: {
       sendString() {
-        //let url = 'https://api.xiehao.xin/string2qrcode';
-        let url = 'http://localhost:8989/string2qrcode';
+        let url = 'https://api.xiehao.xin/string2qrcode';
+        //let url = 'http://localhost:8989/string2qrcode';
         let params = {
           stringVal: this.stringValue,
           codeSize: this.codeSize,
