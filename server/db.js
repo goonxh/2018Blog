@@ -1,12 +1,12 @@
 // Schema、Model、Entity或者Documents的关系请牢记，Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作造成影响，但Model比Entity更具操作性。
 const mongoose = require('mongoose');
 // 连接数据库 如果不自己创建 默认test数据库会自动生成
-/*var options = {
+let options = {
 	user:"xh",
 	pass:"2012011234"
-}*/
+}
 //远程连接
-mongoose.connect('mongodb://47.106.141.98:27017/2018blog');
+mongoose.connect('mongodb://47.106.141.98:27017/2018blog',options);
 //本地连接
 //mongoose.connect('mongodb://localhost/2018blog',options);
 // 为这次连接绑定事件
