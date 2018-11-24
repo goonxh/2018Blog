@@ -37,12 +37,12 @@
         emailInput:""
       }),
       beforeCreate(){
-        
+
       },
       created(){
-       
+
       },
-      mounted() { 
+      mounted() {
       },
       methods: {
         openWechat() {
@@ -59,10 +59,10 @@
         },
 
         backTo:function(element, to, duration){
-          var that = this;
+          let that = this;
            if (duration <= 0) return;
-            var difference = to - element.scrollTop;
-            var perTick = difference / duration * 10;
+            let difference = to - element.scrollTop;
+            let perTick = difference / duration * 10;
 
             setTimeout(function() {
                 element.scrollTop = element.scrollTop + perTick;
@@ -73,14 +73,14 @@
 
         sendMes(){
 
-          let params = { 
+          let params = {
               name : this.nameInput,
               content : this.Contextarea,
               email : this.emailInput
           };
 
           this.$http.post('/api/message/sendMes',params).then((data) => {
-            if(data.body == "successed"){
+            if(data.body === "successed"){
               this.$message({
                 message: '留言发送成功！',
                 type: 'success'
@@ -90,10 +90,10 @@
               this.emailInput = "";
             }
           })
-        } 
+        }
       }
   }
-  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -207,7 +207,7 @@
     -moz-transform:scale(1.05);
     -o-transform:scale(1.05);
   }
-  @media (max-width: 500px) { 
+  @media (max-width: 500px) {
    .titleWrapper{
      width: 300px;
     }
@@ -215,7 +215,7 @@
     font-size: 24px;
   }
    .selfContent{
-    width: 100%; 
+    width: 100%;
     height: 505px;
     background:url(../assets/xh333.jpg);
     border-radius: 0px;
@@ -256,7 +256,7 @@
   }
   .githubIcon{
     margin-left: 0px;
-  } 
+  }
   }
 </style>
 

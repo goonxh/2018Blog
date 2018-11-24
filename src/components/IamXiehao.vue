@@ -27,6 +27,8 @@
 </template>
 
 <script>
+  import {baseUrl} from "../config/utils";
+
   export default {
       data: () => ({
         show: false,
@@ -38,8 +40,7 @@
         dailyText:"更新中..."
       }),
       beforeCreate(){
-        this.$http.get('/api/daily/getDaily').then((data) => {
-            /*console.log(data.body)*/
+        this.$http.get(`${baseUrl}/daily/getDaily`).then((data) => {
             this.dailyText = data.body;
         })
       },
@@ -62,7 +63,7 @@
         },
         scrollFn() { //滚动条变化事件
           this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
-          if(this.scroll == "0"){
+          if(this.scroll === "0"){
             this.show = false;
             this.isScroll = false;
             this.showBtn = true;
@@ -116,8 +117,6 @@
               }
             }
           }
-          /*console.log(e.detail);*/
-          /*console.log(e.deltaY);*/
         }
       },
       mounted() {

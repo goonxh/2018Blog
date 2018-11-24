@@ -6,7 +6,7 @@
     </div>
     <p class="visit">网站一共被访问了{{visitNum}}次。</p>
     <div class="mesBox">
-      <p class="mesNum">共{{mesNum}}条留言</p> 
+      <p class="mesNum">共{{mesNum}}条留言</p>
       <ul class="mesList">
       <li v-for="mes in message">
         <p>称呼：{{mes.name}}<span>日期：{{mes.time}}</span></p>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+  import {baseUrl} from "../config/utils";
   export default {
       data:() => ({
         dailyContent:"",
@@ -27,11 +28,10 @@
         visitNum:"0"
       }),
       beforeCreate(){
-        
+
       },
       created(){
-        this.$http.get('/api/message/getMes').then((data) => {
-            console.log(data.body)
+        this.$http.get(`${baseUrl}/message/getMes`).then((data) => {
             this.message = data.body;
             this.mesNum = this.message.length;
         })
@@ -41,17 +41,16 @@
         })
       },
       mounted(){
-        
-          /*this.fiveArr = this.getArrItems(this.textArr,5)*/
+
       },
       methods: {
         sendDaily() {
-          let params = { 
+          let params = {
               content : this.dailyContent
           };
 
-          this.$http.post('/api/daily/sendDaily',params).then((data) => {
-            if(data.body == "successed"){
+          this.$http.post(`${baseUrl}/daily/sendDaily`,params).then((data) => {
+            if(data.body === "successed"){
               this.$message({
                 message: '日常更新成功！',
                 type: 'success'
@@ -62,7 +61,7 @@
         }
       }
   }
-  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

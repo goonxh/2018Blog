@@ -27,29 +27,30 @@
     </ul>
     </transition>
     <div id="refresh" v-on:click="refreshText"><img id="refreshIcon" src="../assets/circular-arrow.png" alt="" width="25"><span>换一批阅读</span></div>
-  </div> 
+  </div>
 
 </template>
 
 <script>
+  import {baseUrl} from "../config/utils";
   export default {
       data:() => ({
         showText:true,
-        textArr:[/*{"article_time":"October 18, 2017","article_href":"http://blog.xiehao.online/2017/10/18/懒加载与木桶布局/","article_title":"1懒加载与木桶布局"},{"article_time":"September 5, 2017","article_href":"http://blog.xiehao.online/2017/09/05/git上传代码初体验/","article_title":"2git上传代码初体验"},{"article_time":"August 25, 2017","article_href":"http://blog.xiehao.online/2017/08/25/在window下搭建Vue-Js开发环境/","article_title":"3在window下搭建Vue.Js开发环境"},{"article_time":"July 27, 2017","article_href":"http://blog.xiehao.online/2017/07/27/关于这个博客/","article_title":"4关于这个博客"},{"article_time":"September 5, 2017","article_href":"http://blog.xiehao.online/2017/09/05/git上传代码初体验/","article_title":"5git上传代码初体验"},{"article_time":"August 25, 2017","article_href":"http://blog.xiehao.online/2017/08/25/在window下搭建Vue-Js开发环境/","article_title":"6在window下搭建Vue.Js开发环境"},{"article_time":"July 27, 2017","article_href":"http://blog.xiehao.online/2017/07/27/关于这个博客/","article_title":"7关于这个博客"},{"article_time":"September 5, 2017","article_href":"http://blog.xiehao.online/2017/09/05/git上传代码初体验/","article_title":"8git上传代码初体验"},{"article_time":"August 25, 2017","article_href":"http://blog.xiehao.online/2017/08/25/在window下搭建Vue-Js开发环境/","article_title":"9在window下搭建Vue.Js开发环境"},{"article_time":"July 27, 2017","article_href":"http://blog.xiehao.online/2017/07/27/关于这个博客/","article_title":"10关于这个博客"}*/],
+        textArr:[],
         fiveArr:[]
       }),
       beforeCreate(){
-        
+
       },
       created(){
-        this.$http.get('/article/getArticle').then((data) => {  
+        this.$http.get(`${baseUrl}/article/getArticle`).then((data) => {
             this.textArr = data.body;
             this.fiveArr = this.getArrItems(this.textArr,5)
-        })  
-        
+        })
+
       },
       mounted(){
-        
+
           /*this.fiveArr = this.getArrItems(this.textArr,5)*/
       },
       methods: {
@@ -82,12 +83,12 @@
           that.showText = false;
           that.fiveArr = that.getArrItems(that.textArr,5);
           setTimeout(function(){
-            that.showText = true; 
-          },500) 
+            that.showText = true;
+          },500)
         }
      }
   }
-  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -107,11 +108,11 @@
     text-align: left;
     font-family: Helvetica,SimSun;
   }
-  
+
   h3.proText{
     font-size: 36px;
   }
-  
+
   .proContent{
     width: 906px;
     margin:0 auto;
@@ -155,7 +156,7 @@
   }
   .textList li{
     margin: 10px 15px;
-    font-size: 18px;    
+    font-size: 18px;
   }
   .textList li a{
     color: #555;
@@ -183,7 +184,7 @@
   #refresh:hover #refreshIcon{
     transform:rotate(360deg);
   }
-  @media (max-width: 500px) { 
+  @media (max-width: 500px) {
    .wrapper{
     height: 880px;
    }
@@ -204,7 +205,7 @@
    }
    .proContent{
       width: 350px;
-    } 
+    }
   .proWrapper{
     float: none;
   }
@@ -227,13 +228,13 @@
   }
   .textList li{
     margin: 10px 15px;
-    font-size: 18px;    
+    font-size: 18px;
   }
   .textList li a{
     width: 310px;
-    text-overflow:ellipsis; 
+    text-overflow:ellipsis;
     white-space: nowrap;
-    overflow: hidden;   
+    overflow: hidden;
     display: inline-block;
   }
   .textList li a span{

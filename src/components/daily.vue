@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper" >
     <div class="dailyBox">
-      <p class="dailyNum">共{{dailyNum}}条日常</p> 
+      <p class="dailyNum">共{{dailyNum}}条日常</p>
       <ul class="dailyList">
       <li v-for="daily in dailyList">
         <p>日期：{{daily.time}}</p>
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+  import {baseUrl} from "../config/utils";
   export default {
       data:() => ({
         content:"",
@@ -20,23 +21,24 @@
         dailyNum:""
       }),
       beforeCreate(){
-        
+
       },
       created(){
-        this.$http.get('/api/daily/getAllDaily').then((data) => {
+        this.$http.get(`${baseUrl}/daily/getAllDaily`).then((data) => {
             console.log(data.body)
             this.dailyList = data.body;
             this.dailyNum = this.dailyList.length;
         })
       },
       mounted(){
-        
-          
+
+
       },
       methods: {
+
       }
   }
-  
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
