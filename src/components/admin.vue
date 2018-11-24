@@ -35,7 +35,7 @@
             this.message = data.body;
             this.mesNum = this.message.length;
         })
-         this.$http.get('/api/init/getVisitNum').then((data) => {
+         this.$http.get(`${baseUrl}/init/getVisitNum`).then((data) => {
             //console.log(data.body)
             this.visitNum = data.body;
         })
