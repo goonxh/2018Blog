@@ -6,11 +6,11 @@
     </div>
     <div class="proContent">
     <div class="proWrapper">
-      <a href="http://www.showinfo.com.cn" target="_blank"><img src="../assets/showinfoWeb.png" alt="" width="280" class="pro">
+      <a href="http://www.showinfo.com.cn" target="_blank"><img src="../assets/showinfoWeb.jpg" alt="" width="280" class="pro">
       <div class="cover"><p>视尔<br>点击进入</p></div></a>
     </div>
     <div class="proWrapper">
-      <a href="http://blog.xiehao.online" target="_blank"><img src="../assets/blogWeb.png" alt="" width="280" class="pro">
+      <a href="http://blog.xiehao.online" target="_blank"><img src="../assets/blogWeb.jpg" alt="" width="280" class="pro">
       <div class="cover"><p>博客<br>点击进入</p></div></a>
     </div>
     <div class="proWrapper">
@@ -146,7 +146,7 @@
     margin: 10px 10px;
     border: 1px #eef solid;
     border-radius: 10px;
-    box-shadow: 0 0 5px rgb(200,200,200,.6);
+    box-shadow: 0 0 5px rgba(200,200,200,.6);
   }
   .textList{
     width: 900px;
