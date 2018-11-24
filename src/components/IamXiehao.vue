@@ -63,13 +63,13 @@
         },
         scrollFn() { //滚动条变化事件
           this.scroll = document.documentElement.scrollTop || document.body.scrollTop;
-          if(this.scroll === "0"){
+          if(this.scroll === 0){
             this.show = false;
             this.isScroll = false;
             this.showBtn = true;
             this.isGoTop = true;
             this.changeColor = "rgb(255,255,255)";
-          }else if(this.scroll > "10"){
+          }else if(this.scroll > 10){
             this.show = true;
             this.isScroll = true;
             this.showBtn = false;
