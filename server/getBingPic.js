@@ -3,8 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const schedule = require('node-schedule');
 
-var rule1 = new schedule.RecurrenceRule();
-var times1 = [0,12];
+let rule1 = new schedule.RecurrenceRule();
+let times1 = [0,12];
 rule1.hour = times1; rule1.minute = 0;
 
 getBingPic();

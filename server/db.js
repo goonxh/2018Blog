@@ -34,15 +34,4 @@ const Models = {
     init : mongoose.model('init',initSchema)
 }
 
-/*const initModel=db.model("init",initSchema);
-const initEntity = new initModel({
-    visit : 0
-})
-initEntity.save(function(err,data){
-    if(err){
-        console.log("error :" + err);
-    }else{
-        console.log("successed")
-    }
-})*/
 module.exports = Models;

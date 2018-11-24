@@ -235,7 +235,7 @@
 .headerBackground{
   width: 100%;
   height: 100%;
-  background-image: url(../assets/bingPic.jpg);
+  background-image: url(../assets/winter.jpg);
   background-position-x: 50%;
 }
 #imxiehao{
