@@ -9,7 +9,7 @@ var request = require("request");
 /*var url = "http://blog.xiehao.online/archives/";*/
 
 router.get('/api/article/getArticle',(req,response) => {
-    http.get("http://blog.xiehao.online/archives/",function(res){
+    http.get("http://blog.xiehao.xin/archives/",function(res){
 		var html = ""; //用来存储请求网页的整个html内容
 		var titles = [];
 		res.setEncoding("utf-8"); // 防止中文乱码

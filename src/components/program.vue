@@ -47,7 +47,6 @@
             this.textArr = data.body;
             this.fiveArr = this.getArrItems(this.textArr,5)
         })
-
       },
       mounted(){
 
@@ -78,12 +77,11 @@
           }
           return return_array;
         },
-        refreshText:function(){
-          var that = this;
-          that.showText = false;
-          that.fiveArr = that.getArrItems(that.textArr,5);
+        refreshText(){
+          this.showText = false;
+          this.fiveArr = this.getArrItems(this.textArr,5);
           setTimeout(function(){
-            that.showText = true;
+            this.showText = true;
           },500)
         }
      }
