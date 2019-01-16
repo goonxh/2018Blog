@@ -11,6 +11,8 @@
 </template>
 
 <script>
+  import {xpppUrl} from "../config/utils";
+
   export default {
     data() {
       return {
@@ -24,7 +26,7 @@
     },
     methods:{
       getOoxxPic() {
-        this.$http.get('/xapi/ooxxpic').then((res)=>{
+        this.$http.get(`${xpppUrl}/ooxxpic`).then((res)=>{
           this.ooxxpicList = res.body.map((item) =>{
             if(item.lastIndexOf('//') !== 0) {
               return item.substring(item.lastIndexOf('//'), item.length);

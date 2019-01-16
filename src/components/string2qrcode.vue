@@ -32,6 +32,7 @@
 </template>
 
 <script>
+  import {xpppUrl} from "../config/utils";
   export default {
     data() {
       return {
@@ -48,7 +49,7 @@
     },
     methods: {
       sendString() {
-        let url = '/xapi/string2qrcode';
+        let url = `${xpppUrl}/string2qrcode`;
         let params = {
           stringVal: this.stringValue,
           codeSize: this.codeSize,
