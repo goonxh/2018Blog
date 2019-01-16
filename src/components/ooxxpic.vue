@@ -24,7 +24,7 @@
     },
     methods:{
       getOoxxPic() {
-        this.$http.get('http://api.xppp.ink/ooxxpic').then((res)=>{
+        this.$http.get('/xapi/ooxxpic').then((res)=>{
           this.ooxxpicList = res.body.map((item) =>{
             if(item.lastIndexOf('//') !== 0) {
               return item.substring(item.lastIndexOf('//'), item.length);

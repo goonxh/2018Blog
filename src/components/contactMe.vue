@@ -24,7 +24,7 @@
       <img src="../assets/back-to-top2.png" alt="back-to-top" title="回到顶部" class="back-to-top" @click="backtotop">
       <a href="http://www.miitbeian.gov.cn/" target="_blank"><p>皖ICP备18007813号</p></a>
       <p>Inspired by <a href="http://www.dandyweng.com/" target="_blank">Dandy Weng</a>'s design.</p>
-      <p class="copyright">Copyright © 2018 xiehao.xin. All Rights Reserved.</p>
+      <p class="copyright">Copyright © 2018-2019 xiehao.xin. All Rights Reserved.</p>
     </div>
   </div>
 </template>

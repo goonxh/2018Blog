@@ -48,7 +48,7 @@
     },
     methods: {
       sendString() {
-        let url = 'http://api.xppp.ink/string2qrcode';
+        let url = '/xapi/string2qrcode';
         let params = {
           stringVal: this.stringValue,
           codeSize: this.codeSize,

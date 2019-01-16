@@ -15,6 +15,11 @@ module.exports = {
         target: 'http://localhost:8088',
         changeOrigin: true,
       },
+      '/xapi': {
+        target: 'http://api.xppp.ink',
+        changeOrigin: true,
+        pathRewrite: {"^/xapi" : ""}
+      }
     },
 
     // Various Dev Server settings
