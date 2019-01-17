@@ -3,7 +3,9 @@
     <div class="ooxx-wrapper">
       <div class="item"  v-for="(item,index) in ooxxpicList" :key="index">
         <div class="item-content">
-          <img :src="item" alt="" width="100%" @click="showBigImg(item)">
+          <viewer class="viewer-img">
+            <img :src="item" alt="" width="100%">
+          </viewer>
         </div>
       </div>
     </div>
@@ -40,9 +42,6 @@
           this.fullscreenLoading = false;
         })
       },
-      showBigImg(val) {
-        window.open(val);
-      }
     }
   }
 </script>
@@ -62,6 +61,9 @@
     justify-content: center;
     align-items: center;
     height: auto;
+    cursor: pointer;
+  }
+  .viewer-img img {
     cursor: pointer;
   }
   @media (max-width: 1367px) {

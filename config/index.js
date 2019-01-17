@@ -18,7 +18,7 @@ module.exports = {
       '/xapi': {
         target: 'http://api.xppp.ink',
         changeOrigin: true,
-        pathRewrite: {"^/xapi" : ""}
+       // pathRewrite: {"^/xapi" : ""}
       }
     },
 
