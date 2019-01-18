@@ -6,9 +6,9 @@ import router from './router'
 import  VueResource  from 'vue-resource'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-
-import 'viewerjs/dist/viewer.css';
 import Viewer from 'v-viewer';
+import 'viewerjs/dist/viewer.css';
+
 Vue.use(Viewer);
 Viewer.setDefaults({
   "inline": false,
@@ -37,7 +37,7 @@ Viewer.setDefaults({
   "transition": true,
   "fullscreen": true,
   "keyboard": true,
-})
+});
 Vue.use(ElementUI);
 Vue.use(VueResource);
 Vue.config.productionTip = false;

@@ -9,6 +9,7 @@
     <router-view name="daily" />
     <router-view name="resume" />
     <router-view name="ooxxpic" />
+    <router-view name="hupupic" />
     <router-view name="string2qrcode" />
   </div>
 </template>
@@ -21,10 +22,8 @@ export default {
       }),
   created(){
         this.$http.get('/api/init/getVisitNum').then((data) => {
-            //console.log(data.body)
             this.visitNum = data.body;
             this.$http.post('/api/init/sendVisitNum',{visitNum:this.visitNum}).then((data) => {
-              //console.log(data.body)
             })
         })
       },

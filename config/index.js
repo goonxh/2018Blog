@@ -16,10 +16,14 @@ module.exports = {
         changeOrigin: true,
       },
       '/xapi': {
-        target: 'http://api.xppp.ink',
+        target: 'http://localhost:8989',
         changeOrigin: true,
        // pathRewrite: {"^/xapi" : ""}
-      }
+      },
+      /*'/hupupic':{
+          target:'https://i2.hoopchina.com.cn',
+          changeOrigin: true,
+      }*/
     },
 
     // Various Dev Server settings
