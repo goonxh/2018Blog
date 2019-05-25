@@ -234,7 +234,7 @@
 .headerBackground{
   width: 100%;
   height: 100%;
-  background-image: url(../assets/winter.jpg);
+  background-image: url(../assets/summer.jpg);
   background-position-x: 50%;
 }
 #imxiehao{
