@@ -27,11 +27,18 @@ const dailySchema = mongoose.Schema({
 const initSchema = mongoose.Schema({  //初始化数据表
     visit : String
 });
+const todoListSchema = mongoose.Schema({
+    user: String,
+    content: Array,
+    value: Array,
+    time: String,
+})
 /************** 定义模型Model **************/
 const Models = {
     message : mongoose.model('message',messageSchema),
     daily : mongoose.model('daily',dailySchema),
-    init : mongoose.model('init',initSchema)
+    init : mongoose.model('init',initSchema),
+    todolist: mongoose.model('todolist', todoListSchema)
 }
 
 module.exports = Models;

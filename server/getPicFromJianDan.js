@@ -8,10 +8,6 @@ let http = require("http");
 let fs = require("fs");
 let cheerio = require("cheerio");
 let request = require("request");
-/*let i = 0;*/
-//let url = "http://jandan.net/top-ooxx/";
-//let url = "http://blog.xiehao.online/archives/";
-
 
 // 定义网络爬虫的目标地址：自如友家的主页
 let url = 'http://www.ziroom.com/';
@@ -95,19 +91,3 @@ function printInfo(slideListData) {
         console.log('\n');
     });
 }
-
-/*
-const dirname = 'uploadImages'
-const hostdir = "../dist/static/"
-
-function mkdirSync(dirname) {
-  if (fs.existsSync(dirname)) {
-    return true;
-  } else {
-    if (mkdirSync(path.dirname(dirname))) {
-      fs.mkdirSync(dirname);
-      return true;
-    }
-  }
-  return false
-}*/

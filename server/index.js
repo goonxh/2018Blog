@@ -1,6 +1,7 @@
 ﻿// 引入编写好的api
 const article = require('./blog_spider');
 const api = require('./api');
+const todolistApi = require('./todolist');
 // 引入文件模块
 const fs = require('fs');
 // 引入处理路径的模块
@@ -10,10 +11,13 @@ const bodyParser = require('body-parser')
 // 引入Express
 const express = require('express');
 const app = express();
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(api);
+app.use(todolistApi);
 app.use(article);
 /*// 访问静态资源文件 这里是访问所有dist目录下的静态资源文件
 app.use(express.static(path.resolve(__dirname, '../dist')))

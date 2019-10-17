@@ -15,6 +15,7 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "compression-webpack-plugin": "^1.1.11",
+    "cors": "^2.8.5",
     "echarts": "^4.0.4",
     "element-ui": "^2.2.1",
     "express": "^4.16.2",
